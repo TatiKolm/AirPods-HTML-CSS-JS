@@ -87,6 +87,14 @@ body {
 
 }
 
+.content-item {
+    display: none;
+}
+
+.content-item.content-item--active {
+    display: inline-block;
+}
+
 .header__content-images {
     text-align: center;
     padding-bottom: 100px;
@@ -101,7 +109,26 @@ body {
     bottom: 0;
     width: 100%;
     z-index: -2;
+}
+
+.header__content-images:has(.color--blue.content-item--active)::before {
     background: linear-gradient(180deg, #CADBEB 0%, rgba(235, 235, 235, 0.00) 100%);
+}
+
+.header__content-images:has(.color--pink.content-item--active)::before {
+    background: linear-gradient(180deg, #F3D6D1 0%, rgba(235, 235, 235, 0.00) 100%);
+}
+
+.header__content-images:has(.color--green.content-item--active)::before {
+    background: linear-gradient(180deg, #DDEAD9 0%, rgba(235, 235, 235, 0.00) 100%);
+}
+
+.header__content-images:has(.color--black.content-item--active)::before {
+    background: linear-gradient(180deg, #B6B6B6 0%, rgba(235, 235, 235, 0.00) 100%);
+}
+
+.header__content-images:has(.color--silver.content-item--active)::before {
+    background: linear-gradient(180deg, #FAFAFA 0%, rgba(235, 235, 235, 0.00) 100%);
 }
 
 .title--s {
@@ -148,6 +175,10 @@ body {
     border-radius: 20px;
     border: 1px solid #777;
     padding: 50px 55px;
+}
+
+.choose-color__btn--active {
+    display: none;
 }
 
 .composition {
@@ -323,6 +354,7 @@ body {
     .title {
         font-size: 58px;
     }
+
     .choose-color {
         padding-bottom: 60px;
     }
@@ -367,7 +399,7 @@ body {
         padding: 40px 0;
     }
 
-    .composition__text{
+    .composition__text {
         min-width: 100%;
     }
 
@@ -376,20 +408,25 @@ body {
         gap: 40px;
         justify-content: center;
     }
-    .menu__list{
+
+    .menu__list {
         flex-wrap: wrap;
         gap: 20px 40px;
     }
-    .menu__item-btn{
+
+    .menu__item-btn {
         margin-left: auto;
     }
-    .menu__item-btn button{
+
+    .menu__item-btn button {
         width: 250px;
     }
-    .menu__item:first-child{
+
+    .menu__item:first-child {
         margin-left: auto;
     }
-    .header__top{
+
+    .header__top {
         align-items: flex-start;
     }
 }
@@ -409,7 +446,8 @@ body {
         max-width: 100%;
     }
 }
-@media(max-width: 404px){
+
+@media(max-width: 404px) {
     .title {
         font-size: 50px;
     }
